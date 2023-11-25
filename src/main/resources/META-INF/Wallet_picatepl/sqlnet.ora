@@ -1,0 +1,2 @@
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="=D:\\D^2\\Firma\\Wallet_picatepl")))
+SSL_SERVER_DN_MATCH=no

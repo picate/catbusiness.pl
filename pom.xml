@@ -13,6 +13,7 @@
         <java.version>17</java.version>
         <vaadin.version>24.2.2</vaadin.version>
 		<spring-security.version>6.1.5</spring-security.version>
+
     </properties>
 
     <parent>
@@ -20,16 +21,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.1.5</version>
     </parent>
-
-    <repositories>
-        <repository>
-            <id>Vaadin Directory</id>
-            <url>https://maven.vaadin.com/vaadin-addons</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -74,21 +65,52 @@
         </dependency>
 	<!-- ... other dependency elements ... -->
 	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-security</artifactId>
 	</dependency>
-	<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <optional>true</optional>
-    </dependency>
     	<dependency>
     		<groupId>javax.servlet</groupId>
    		 	<artifactId>javax.servlet-api</artifactId>
     		<version>4.0.1</version>
     		<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    </dependency>
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.oracle.database.spring</groupId>
+		    <artifactId>oracle-spring-boot-starter-wallet</artifactId>
+		    <version>3.1.0</version>
+		    <type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>	
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>
+		</dependency>	
     </dependencies>
 
     <build>
@@ -197,9 +219,16 @@
                             <enableAssertions>true</enableAssertions>
                         </configuration>
                     </plugin>
+                    <plugin>
+				        <groupId>org.apache.maven.plugins</groupId>
+				        <artifactId>maven-eclipse-plugin</artifactId>
+				        <configuration>
+				          <downloadSources>true</downloadSources>
+				          <downloadJavadocs>true</downloadJavadocs>
+				        </configuration>
+				      </plugin>
                 </plugins>
             </build>
         </profile>
-
     </profiles>
 </project>

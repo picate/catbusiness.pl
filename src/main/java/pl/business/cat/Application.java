@@ -1,6 +1,7 @@
 package pl.business.cat;
 
 import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 
@@ -16,6 +17,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * and some desktop browsers.
  *
  */
+@Push
 @SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
 @PWA(name = "Home page of mobile game CatBusiness", shortName = "Cat Business")
 @Theme("my-theme")
