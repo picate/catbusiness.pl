@@ -24,6 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import oracle.jdbc.pool.OracleDataSource;
 import pl.business.cat.Config;
 import pl.business.cat.PropertiesApp;
+import pl.business.cat.login.user.User;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration(classes = Config.class)
@@ -31,12 +32,11 @@ import pl.business.cat.PropertiesApp;
 public class Init {
 
 	@Autowired
-	Config config;
+	User config;
 	
 	@Test
 	public void isConnected() {
-		PropertiesApp pApp = config.getProps();
-		//DataSource dSource = config.dataSource();
+		
 		try {
 			OracleDataSource ods = new OracleDataSource();
 			//ods.setDriverType(pApp.getDriver());

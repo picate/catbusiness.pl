@@ -1,8 +1,14 @@
 package pl.business.cat.view;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H6;
+import com.vaadin.flow.component.login.AbstractLogin.LoginEvent;
 import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -49,5 +55,13 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 		pi.setClassName("sign-in-h");
 		sign.setClassName("sign-in-h");
 		add(pi, login,sign);
+		this.login.addLoginListener((e)->auth(e));
+	}
+
+	private void auth(LoginEvent e) {
+		Authentication auth = new UsernamePasswordAuthenticationToken(e.getUsername(), e.getPassword());
+		Authentication pass = new DaoAuthenticationProvider().authenticate(auth);
+		SecurityContextHolder.getContext().setAuthentication(pass);	
+		UI.getCurrent().navigateToClient("/{e.getUsername}");
 	}
 }

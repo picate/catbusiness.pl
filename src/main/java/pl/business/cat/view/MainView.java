@@ -2,25 +2,13 @@ package pl.business.cat.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.Paragraph;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.page.AppShellConfigurator;
-import com.vaadin.flow.component.page.Push;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.PreserveOnRefresh;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinService;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import com.vaadin.flow.theme.Theme;
 
 import pl.business.cat.GreetService;
 
@@ -41,7 +29,7 @@ import pl.business.cat.GreetService;
 //@CssImport(value = "./styles/main/main.css")
 @PreserveOnRefresh
 @PageTitle("Cat Business")
-public class MainView extends VerticalLayout {
+public class MainView extends VerticalLayout{
 
     /**
      * Construct a new Vaadin view.
