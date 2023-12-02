@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -22,6 +23,9 @@ public class BusinessUserService implements UserDetailsService{
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private PasswordEncoder bCryptPasswordEncoder;
 
 	private LoginTokenService loginTokenService;
 
@@ -47,7 +51,7 @@ public class BusinessUserService implements UserDetailsService{
             throw new IllegalStateException("email already taken");
         }
 
-        String encodedPassword = new BCryptPasswordEncoder()
+        String encodedPassword = bCryptPasswordEncoder 
                 .encode(user.getPassword());
 
         user.setPassword(encodedPassword);
