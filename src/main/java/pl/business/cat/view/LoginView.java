@@ -49,12 +49,17 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 	
 	public void setHComp(){
 		H1 pi = new H1("Picate");
-		Button sign = new Button("Sign-in");
+		Button signIn = new Button("Sign-in");
+		//signIn.addSingleClickListener((b)->getUI().ifPresent(ui->ui.navigate("login")));
+		Button signUp = new Button("Sign-up");
+		signUp.addSingleClickListener((b)->getUI().ifPresent(ui->ui.navigate("registrasion")));
 		pi.setId("picate");
-		sign.setId("sign-in");
+		signIn.setId("sign-in");
 		pi.setClassName("sign-in-h");
-		sign.setClassName("sign-in-h");
-		add(pi, login,sign);
+		signUp.setId("sign-up");
+		signIn.setClassName("sign");
+		signUp.setClassName("sign");
+		add(pi, login,signIn,signUp);
 		this.login.addLoginListener((e)->auth(e));
 	}
 

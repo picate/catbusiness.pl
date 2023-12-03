@@ -34,12 +34,15 @@
 	background-image: url('../images/background big.png');
 }
 
-.sign-in-h{
-	
+.sign{
+	color: rgb(248, 154, 14);
+	text-shadow: 3px 3px 5px rgb(83, 163, 227);
+	background-color: rgb(101, 148, 104);
 }
 
 #picate{
-	margin-top: -35vh;
+	margin-top: -25vh;
+	margin-bottom: -5vh;
 	font-size: 25vh;
 	color: #FFCB5A;
 	text-shadow: 3px 3px 5px rgb(83, 163, 227);
@@ -47,9 +50,12 @@
 
 #sign-in{
 	height: 5vh;
-	width: 7vw;
+	width: 9vw;
 	font-size: 38px;
-	color: rgb(248, 154, 14);
-	text-shadow: 3px 3px 5px rgb(83, 163, 227);
-	background-color: rgb(101, 148, 104);
+}
+
+#sign-up{
+	height: 3vh;
+	width: 6vw;
+	font-size: 24px;
 }
