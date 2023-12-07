@@ -24,10 +24,6 @@ public class RegistrasionView extends VerticalLayout {
 	}
 
 	private void addViews() {
-		H1 pi = new H1("Picate");
-		pi.setId("picate");
-		Button regisButton = new Button("Sing up");
-		
-		add(pi,regis,regisButton);
+		add(regis);
 	}
 }

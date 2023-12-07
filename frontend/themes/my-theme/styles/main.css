@@ -41,6 +41,8 @@
 }
 
 #picate{
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: -25vh;
 	margin-bottom: -5vh;
 	font-size: 25vh;
@@ -58,4 +60,34 @@
 	height: 3vh;
 	width: 6vw;
 	font-size: 24px;
+}
+
+#regis{
+	height: 100vh;
+	width: 100vw !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #b7dc98;
+}
+
+#regis-label{
+	
+}
+
+#regis-button{
+	
+}
+
+.regis-field{
+	
+}
+
+.regis-form{
+	width: 750px;
+	display: flex;
+	align-self: center;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
 }
