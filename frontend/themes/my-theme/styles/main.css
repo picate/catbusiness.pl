@@ -82,11 +82,38 @@
 }
 
 #regis-button{
-	
+	display: flex;
+	max-width: 40%;
+	min-width: 30%;
+	width: 35%;
+	height: 10%;
+	font-size: 28pt;
 }
 
 .regis-field{
 	
+}
+
+.data-regis{
+	display: flex;
+	max-width: 45%;
+	min-width: 40%;
+	width: 45%;
+}
+.layout-data-regis{
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+
+#regis-label{
+	font-size: 22pt;
+	padding-left: 5%;
+	color: black;
+}
+
+#regis-hl-label{
+	background-color: white;
 }
 
 .regis-form{
